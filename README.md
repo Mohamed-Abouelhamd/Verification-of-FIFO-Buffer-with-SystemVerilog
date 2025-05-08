@@ -15,9 +15,13 @@ This project of verifying a FIFO design using system Verilog includes:
 |                                                    | [200:255]                     | 10%                      | - |
 | **Last 8 bits of `data_in`**                       | [0:50]                        | -                        |  Within [0:50] if the first 8 bits are >150.    |
 |                                                    | [0:255]                       | -                        |  Within [0:255] if the first 8 bits ≤150.       |
-| **Read_enable signal**                             | Randomized                    | Weighted Random          | -                                  |
-| **Write_enable signal**                            | Randomized                    | Weighted Random          | -                                  |
+| **Read_enable**                             | Randomized                    | Weighted Random          | -                                  |
+| **Write_enable**                            | Randomized                    | Weighted Random          | -                                  |
 
-  3) Coverage Points: Implement cover points to ensure 100% coverage of the Full Flag and Empty Flag signals.
-  4) Assertions1: Write an assertion to verify the following condition: When the **Write_enable** signal is asserted and the FIFO is not full, the write pointer **write_ptr** should increment.
-  5)  Assertion 2: Write any additional assertion that you consider important for verifying the correctness or functionality of the FIFO design.
+  1) Coverage Points: Implement cover points to ensure 100% coverage of the Full Flag and Empty Flag signals.
+  2) Assertions1: Write an assertion to verify the following condition: When the **Write_enable** signal is asserted and the FIFO is not full, the write pointer **write_ptr** should increment.
+  3)  Assertion 2: Write any additional assertion that you consider important for verifying the correctness or functionality of the FIFO design.
+  4)  Code Coverage: Perform code coverage analysis to assess the effectiveness of the testbench in exercising the RTL code.
+
+#### Note on the Design after verifying it:
+The design is working well except for when the full signal is asserted, the FIFO is not totally full. The last address does not contain data.
