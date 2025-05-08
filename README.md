@@ -24,4 +24,4 @@ This project of verifying a FIFO design using system Verilog includes:
   6)  Code Coverage: Perform code coverage analysis to assess the effectiveness of the testbench in exercising the RTL code.
 
 #### Note on the Design after verifying it:
-The design is working well except for when the full signal is asserted, the FIFO is not totally full. The last address does not contain data.
+The design is correctly well except for when the full signal is asserted, the FIFO is not totally full. The last address does not contain data.
